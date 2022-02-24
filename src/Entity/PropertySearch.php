@@ -20,6 +20,7 @@ class PropertySearch
 
     private $minSurface;
 
+
     /**
     * @return int|null
     */ 
@@ -56,4 +57,5 @@ class PropertySearch
         $this->minSurface = $minSurface;
         return $this;
     }
+
 }

@@ -40,12 +40,9 @@ class PropertyType extends AbstractType
                 },
                 'choice_label' => 'abbreviation',
                 'required'=>true,
-               
-
+            
             ])
 
-          
-            
         ;
     }
 
