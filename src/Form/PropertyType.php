@@ -5,10 +5,12 @@ namespace App\Form;
 use App\Entity\Property;
 use App\Entity\State;
 use App\Repository\StateRepository;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Doctrine\ORM\Mapping\Entity;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -20,11 +22,33 @@ class PropertyType extends AbstractType
         $builder
             ->add('title')
             ->add('description')
-            ->add('surface')
-            ->add('rooms')
-            ->add('bedrooms')
-            ->add('floor')
-            ->add('price')
+            ->add('surface',IntegerType::class,[
+                'attr' => [
+                    'min' => 0
+                ],
+            ])
+            ->add('rooms',IntegerType::class,[
+                'attr' => [
+                    'min' => 0 
+                ],
+            ])
+            ->add('bedrooms',IntegerType::class,[
+                'attr' => [
+                    'min' => 0   
+                ],
+            ])
+            ->add('floor',IntegerType::class,[
+                'attr' => [
+                    'min' => 0
+                    
+                ],
+            ])
+            ->add('price',IntegerType::class,[
+                'attr' => [
+                    'min' => 0
+                    
+                ],
+            ])
             ->add('heat', ChoiceType::class,['choices' => $this->getChoices()])
             ->add('city')
             ->add('address')
@@ -41,6 +65,9 @@ class PropertyType extends AbstractType
                 'choice_label' => 'abbreviation',
                 'required'=>true,
             
+            ])
+            ->add('imageFile',FileType::class,[
+                'required'=>false
             ])
 
         ;

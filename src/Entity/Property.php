@@ -10,12 +10,15 @@ use Cocur\Slugify\Slugify;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use App\Entity\State;
-
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 
 /**
  * @ORM\Entity(repositoryClass=PropertyRepository::class)
  * @UniqueEntity("title")
+ * @Vich\Uploadable()
  */
 class Property
 {
@@ -32,6 +35,24 @@ class Property
     private $id;
 
     /**
+     * @var string|null
+     * @ORM\Column(type="string", length=255)
+     */
+
+    private $filename;
+
+    /**
+     * @var File|null
+     * @Assert\Image(
+     *      mimeTypes="image/jpeg"
+     * )
+     * @Vich\UploadableField(mapping="property_image", fileNameProperty="filename")
+     */
+
+    private $imageFile;
+
+
+    /**
      * @Assert\Length(min=5, max=255)
      * @ORM\Column(type="string", length=255)
      */
@@ -45,26 +66,31 @@ class Property
     /**
      * @ORM\Column(type="integer")
      * @Assert\Range(min=10, max=400)
+     * @Assert\PositiveOrZero
      */
     private $surface;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\PositiveOrZero
      */
     private $rooms;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\PositiveOrZero
      */
     private $bedrooms;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\PositiveOrZero
      */
     private $floor;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\PositiveOrZero
      */
     private $price;
 
@@ -103,6 +129,11 @@ class Property
      * @ORM\ManyToOne(targetEntity=State::class, inversedBy="properties")
      */
     private $state;
+
+    /**
+     * @ORM\Column(type="datetime_immutable")
+     */
+    private $updated_at;
 
     public function __construct()
     {
@@ -297,9 +328,58 @@ class Property
         return $this;
     }
 
+    /**
+     * @return null|string
+     */
 
+     public function getFileName(): ?string
+     {
+         return $this->filename;
+     }
 
-    
+     /**
+      * @param null|string $filename
+      * @return Property
+      */
 
+      public function setFilename(?string $filename): Property
+      {
+          $this->filename = $filename;
+          return $this;
+      }
 
+    /**
+     * @return null|File
+     */ 
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * @param null|File $imageFIle
+     * @return Property
+     */ 
+    public function setImageFile(?File $imageFile): Property
+    {
+        $this->imageFile = $imageFile;
+        // Only change the updated af if the file is really uploaded to avoid database updates.
+        // This is needed when the file should be set when loading the entity.
+        if ($this->imageFile instanceof UploadedFile) {
+            $this->updated_at = new \DateTimeImmutable('now');
+        }
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(\DateTimeImmutable $updated_at): self
+    {
+        $this->updated_at = $updated_at;
+
+        return $this;
+    }
 }

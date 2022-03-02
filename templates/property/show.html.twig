@@ -6,12 +6,17 @@
     <div class="jumbotron">
         <div class="container">
             <div class="row">
-            <div class="col-md-8"></div>
+            <div class="col-md-8">
+                {% if property.filename %}
+                    <img src="{{vich_uploader_asset(property,'imageFile')}}" alt="card-img-top" style="width:700px; height:500px;">
+                {% else %}
+                    <img src="{{"/images/properties/empty.png"}}" alt="card-img-top">
+                {% endif %}
+            </div>
             <div class="col-md-4">
                 <h1>{{property.title}}</h1>
                 <h2><i class="fas fa-map-marker-alt"></i> {{property.city}}, {{property.state}}</h2>
-                <h4><i class="fas fa-city"></i> {{property.address}} <br> {{property.city}}, {{property.state}} {{property.postalCode}}</h4>
-                <h4>{{property.rooms}} rooms - {{property.surface}} meters</h4>
+                <h2><i class="fas fa-city"></i> {{property.address}} <br> {{property.city}}, {{property.state}} {{property.postalCode}}</h2>
                 <div class="text-success" style= "font-size: 4rem; font-weight: bold;">{{property.formattedPrice}} $</div>
                 <a href="#" class="btn btn-success">Contact us !</a>
             </div>
