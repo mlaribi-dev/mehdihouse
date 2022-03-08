@@ -9,6 +9,9 @@
             <a class="text-success" href="{{ path('property.show',{slug: property.slug, id: property.id})}}">
                 {{ property.title }}
             </a>
+            <p style="float:right;">
+                {{property.surface}} m2
+            </p>
         </h5>
         <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{property.city}}, {{property.state}}</p>
         <p><i class="fas fa-city"></i> {{property.address}} <br> {{property.city}}, {{property.state}} {{property.postalCode}}</p>

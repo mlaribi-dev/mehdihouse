@@ -37,7 +37,6 @@ class PropertySearchType extends AbstractType
             'class'=>State::class,
             'required' => false,
             'choice_label'=>'name',
-        
             'label' => false,
             'placeholder'=>' By State'
         
