@@ -8,17 +8,33 @@
             <div class="row">
             <div class="col-md-8">
                 {% if property.filename %}
-                    <img src="{{vich_uploader_asset(property,'imageFile')}}"  style="width:700px; height:500px;">
+                    <img src="{{vich_uploader_asset(property,'imageFile')}}" style="width:700px; height:500px;">
                 {% else %}
-                    <img src="{{"/images/properties/empty.png"}}" alt="card-img-top">
+                    <img src="{{"/images/properties/empty.png"}}">
                 {% endif %}
             </div>
             <div class="col-md-4">
                 <h1>{{property.title}}</h1>
                 <h2><i class="fas fa-map-marker-alt"></i> {{property.city}}, {{property.state}}</h2>
-                <h2><i class="fas fa-city"></i> {{property.address}} <br> {{property.city}}, {{property.state}} {{property.postalCode}}</h2>
+                <h2><i class="fas fa-city"></i> {{property.address}} {{property.city}}, {{property.state}} {{property.postalCode}}</h2>
                 <div class="text-success" style= "font-size: 4rem; font-weight: bold;">{{property.formattedPrice}} $</div>
                 <a href="#" class="btn btn-success">Contact us !</a>
+                <div id="contactForm" class="mt-4">
+                    {{ form_start(form)}}
+                    <div class="row">
+                        <div class="col">{{form_row(form.firstname,{'label':'Your First Name'})}}</div>
+                        <div class="col">{{form_row(form.lastname,{'label':'Your Last Name'})}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">{{form_row(form.phone,{'label':'Your Phone Number'})}}</div>
+                        <div class="col">{{form_row(form.email,{'label':'Your Email'})}}</div>
+                    </div>
+                    {{form_rest(form)}}
+                    <div class="form-group">
+                        <button class="btn btn-success">Send</button>
+                    </div>
+                    {{form_end(form)}}
+                </div>
             </div>
         </div>
     </div>

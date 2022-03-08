@@ -39,10 +39,6 @@ class State
         $this->properties = new ArrayCollection();
     }
 
-
-
-
-
     public function getId(): ?int
     {
         return $this->id;

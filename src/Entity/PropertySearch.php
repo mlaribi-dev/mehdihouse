@@ -20,6 +20,11 @@ class PropertySearch
 
     private $minSurface;
 
+    /**
+    * @var State|null
+    */
+
+    private $state;
 
     /**
     * @return int|null
@@ -57,5 +62,28 @@ class PropertySearch
         $this->minSurface = $minSurface;
         return $this;
     }
+
+    /**
+    * @return State|null
+    */ 
+    public function getState(): ?State
+    {
+        return $this->state;
+    }
+
+    /**
+    * @param State|null $state
+    * @return PropertySearch
+    */ 
+
+    public function setState(State $state): PropertySearch
+    {
+        $this->state = $state;
+        return $this;
+    }
+
+
+   
+    
 
 }

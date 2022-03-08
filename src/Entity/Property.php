@@ -36,7 +36,7 @@ class Property
 
     /**
      * @var string|null
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
 
     private $filename;
@@ -131,7 +131,7 @@ class Property
     private $state;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime_immutable", nullable=true)
      */
     private $updated_at;
 

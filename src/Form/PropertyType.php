@@ -67,7 +67,7 @@ class PropertyType extends AbstractType
             
             ])
             ->add('imageFile',FileType::class,[
-                'required'=>false
+                'required'=>false,
             ])
 
         ;
