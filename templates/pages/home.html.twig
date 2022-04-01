@@ -16,11 +16,14 @@
                <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">
-                            <a class="text-success" href="{{ path('property.show', {id: property.id, slug: property.slug})}}">{{ property.title }}</a>
+                            <a class="text-success" href="{{ path('property.show', {id: property.id, slug: property.slug})}}">{{ property.title }} </a>
                         </h5>
                         <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{ property.city}}, {{property.state}}</p>
                         <p><i class="fas fa-city"></i> {{property.address}} <br> {{property.city}}, {{property.state}} {{property.postalCode}}</p>
                         <div class="text-success" style="font-weight : bold; font-size: 2rem;"> {{property.formattedPrice}} $</div>
+                        <p style="font-weight: bold;">
+                            {{property.surface}} m2
+                        </p>
                     </div>
                 </div>
             </div>
