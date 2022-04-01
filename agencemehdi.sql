@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 07 Mars 2022 à 08:20
+-- Généré le :  Ven 01 Avril 2022 à 13:11
 -- Version du serveur :  5.7.11
 -- Version de PHP :  7.0.3
 
@@ -84,12 +84,18 @@ INSERT INTO `property` (`id`, `title`, `description`, `city`, `surface`, `rooms`
 (140, 'Los Angeles House', 'Let\'s live the Hollywood Dream !', 'Los Angeles', 400, 10, 6, 4, 7000000, 0, '2349 Oakway Lane', '90017', 0, '2022-03-03 09:16:30', 5, '6220876f22bfa713752377.jpg', '2022-03-03 09:16:31'),
 (141, 'Chicago House', 'Let\'s try Chicago !', 'Chicago', 200, 4, 3, 2, 2300000, 0, '4832 Point Street', '60641', 0, '2022-03-03 09:18:21', 13, '622087ddda95f089815529.jpg', '2022-03-03 09:18:21'),
 (142, 'Houston House', 'Houston, the heart of Texas !', 'Houston', 350, 7, 4, 2, 4000000, 0, '1509 Wines Lane', '77099', 0, '2022-03-03 09:20:26', 43, '6220885b22ad8484296592.jpg', '2022-03-03 09:20:27'),
-(143, 'Miami House', 'Welcome to Miami', 'Miami', 360, 9, 3, 3, 4500000, 0, '4311 Agriculture Lane', '33165', 0, '2022-03-03 09:31:42', 9, '62208afee35f0481941767.jpg', '2022-03-03 09:31:42'),
+(143, 'Miami House', 'Welcome to Miami', 'Miami', 360, 9, 3, 3, 4500000, 0, '4311 Beach Lane', '33165', 0, '2022-03-03 09:31:42', 9, '62208afee35f0481941767.jpg', '2022-03-03 09:31:42'),
 (145, 'San Francisco House', 'Let\'s see the Golden Bridge !', 'San Francisco', 350, 7, 4, 2, 3000000, 0, '3956 Meadow Lane', '94108', 0, '2022-03-03 09:38:19', 5, '62208c8b4d320442752738.jpg', '2022-03-03 09:38:19'),
-(146, 'Las Vegas House', 'Have fun in Las Vegas !', 'Las Vegas', 200, 6, 4, 2, 300000, 0, '3463 Adams Avenue', '21701', 0, '2022-03-03 09:41:32', 28, '62208d64aacc8712154902.jpg', '2022-03-03 09:41:56'),
+(146, 'Las Vegas House', 'Have fun in Las Vegas !', 'Las Vegas', 200, 6, 4, 2, 3000000, 0, '3463 Adams Avenue', '21701', 0, '2022-03-03 09:41:32', 28, '62208d64aacc8712154902.jpg', '2022-03-03 09:41:56'),
 (147, 'Atlanta House', 'It\'s Atlanta !', 'Atlanta', 350, 9, 3, 3, 3600000, 0, '604 College Street', '30340', 0, '2022-03-03 20:14:34', 10, '622121aa8106d103847745.jpg', '2022-03-03 20:14:34'),
 (148, 'Washington, DC House', 'America\'s heart !', 'Washington', 390, 11, 6, 4, 4560000, 0, '2394 Rhode Island Avenue', '20200', 0, '2022-03-04 10:52:13', 51, '6221ef5da8d54729269758.jpg', '2022-03-04 10:52:13'),
-(149, 'Boston House', 'The heart ot the US North-East Cost !', 'Boston', 350, 10, 6, 3, 4800000, 0, '2593 Valley View Drive', '02110', 0, '2022-03-04 15:52:14', 21, '622235b2894e6938353638.jpg', '2022-03-04 15:52:14');
+(149, 'Boston House', 'The heart ot the US North-East Cost !', 'Boston', 350, 10, 6, 3, 4800000, 0, '2593 Valley View Drive', '02110', 0, '2022-03-04 15:52:14', 21, '622235b2894e6938353638.jpg', '2022-03-04 15:52:14'),
+(150, 'Indianapolis House', 'The capital of Indiana !', 'Indianapolis', 370, 11, 8, 3, 5400000, 0, '2062 Overlook Drive', '46204', 0, '2022-03-08 19:15:28', 14, '6227ab5104dbc321798375.jpg', '2022-03-08 19:15:28'),
+(151, 'Cincinnati House', 'Hey, have fun in Cincinatti', 'Cincinnati', 380, 10, 6, 2, 1500000, 1, '2514 Goldie Lane', '45202', 0, '2022-03-08 19:18:02', 35, '6227abea752b0905064471.jpg', '2022-03-08 19:18:02'),
+(152, 'Nashville House', 'Let\'s dance to the music in Nashville !', 'Nashville', 340, 10, 6, 3, 5600000, 0, '1844 Frum Street', '37203', 0, '2022-03-10 15:38:42', 42, '622a1b84c9783600857888.jpg', '2022-03-10 15:38:42'),
+(153, 'Dallas House', 'This is Dallas ! In Texas !', 'Dallas', 330, 11, 5, 3, 4500000, 0, '2163 Whitetail Lane', '75240', 0, '2022-03-15 12:25:11', 43, '623085a7c8e08548337691.jpg', '2022-03-15 12:25:11'),
+(154, 'Philadelphia House', 'The NYC\'s rival !', 'Philadelphia', 320, 9, 4, 2, 3000000, 0, '2368 Quincy Street', '19108', 0, '2022-03-28 07:21:07', 38, '624161e378aaf228339337.jpg', '2022-03-28 07:21:07'),
+(155, 'Phoenix House', 'Welcome in the Arizona\'s heart !', 'Phoenix', 360, 8, 7, 2, 4000000, 0, '2439 Griffin Street', '85008', 0, '2022-03-31 07:59:07', 3, '62455f4f32c09918943090.jpg', '2022-03-31 07:59:08');
 
 -- --------------------------------------------------------
 
@@ -216,7 +222,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `property`
 --
 ALTER TABLE `property`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
 --
 -- AUTO_INCREMENT pour la table `state`
 --
