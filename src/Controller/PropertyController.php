@@ -71,7 +71,7 @@ class PropertyController extends AbstractController
      * @param Property $property
      * @return Response
      */
-    public function show(Property $property, string $slug, Request $request /**,ContactNotification $notification*/): Response
+    public function show(Property $property, string $slug, Request $request ,ContactNotification $contactNotification): Response
     {
         // Recherche le bien avec son id, si pas de projet, on revient sur la page actuelle
         if ($property->getSlug() !== $slug) {
@@ -86,13 +86,12 @@ class PropertyController extends AbstractController
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
-        /****
-              if($form->isSubmitted() && $form->isValid()){
+
+            if($form->isSubmitted() && $form->isValid()){
             $contactNotification->notify($contact);
-            $this->addFlash('success','Thanks, we received your email');
-        }
-        * 
-         */   
+            $this->addFlash('success','Thanks, we\'ve received your email');
+            }
+  
 
         return $this->render('property/show.html.twig', [
             'property' => $property,
