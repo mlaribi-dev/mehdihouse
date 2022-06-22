@@ -62,7 +62,7 @@ class PropertyType extends AbstractType
                     return $er->createQueryBuilder('sta')
                         ->orderBy('sta.id','ASC');
                 },
-                'choice_label' => 'abbreviation',
+                'choice_label' => 'name',
                 'required'=>true,
             
             ])
