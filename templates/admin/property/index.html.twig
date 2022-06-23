@@ -25,6 +25,8 @@
                 <th>Title</th>
                 <th>City</th>
                 <th>State</th>
+                <th>Address</th>
+                <th>ZIP Code</th>
                 <th>Price</th>
                 <th>Actions</th>
             </tr>
@@ -35,9 +37,10 @@
                 <td>{{ property.title}}</td>
                 <td>{{ property.city}}</td>
                 <td>{{ property.state.name}} ({{property.state.abbreviation}})</td>
-                <td>{{ property.price}} $</td>
+                <td>{{ property.address}}</td>
+                <td>{{ property.postalCode}}</td>
+                <td>{{ property.formattedPrice}} $</td>
                 <td>
-                    <a href="{{ path('property.show', {id: property.id, slug: property.slug}) }}" class="btn btn-primary">Show</a>
                     <a href="{{ path('admin.property.edit', {id: property.id}) }}" class="btn btn-info">Edit</a>
                     <form method="post" action="{{ path('admin.property.delete', {id: property.id}) }}" style="display:inline-block" onsubmit="return confirm('Do you really want to delete this house ?')">
                         <input type="hidden" name="_method" value="DELETE">
