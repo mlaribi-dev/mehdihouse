@@ -38,14 +38,9 @@ class PropertySearchType extends AbstractType
             'required' => false,
             'choice_label'=>'name',
             'label' => false,
-            'placeholder'=>' By State'
+            'placeholder'=>'State'
         
-        ])
-       
-    
-
-
-        ;
+        ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

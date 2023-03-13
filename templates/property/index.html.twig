@@ -31,6 +31,10 @@
         <div class="col-md-4">
             {% include 'property/_property.html.twig' %}
         </div>
+        {% else %}
+            <div>
+                <p class="no-property-founded">No properties found</p>
+            </div>
     {% endfor %}
     </div>
     <div class="pagination">

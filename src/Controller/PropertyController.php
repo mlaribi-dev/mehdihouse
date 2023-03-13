@@ -81,22 +81,22 @@ class PropertyController extends AbstractController
             ], 301);
         }
 
-        $contact = new Contact();
-        $contact->setProperty($property);
-        $form = $this->createForm(ContactType::class, $contact);
-        $form->handleRequest($request);
+       // $contact = new Contact();
+       //  $contact->setProperty($property);
+       //  $form = $this->createForm(ContactType::class, $contact);
+       //  $form->handleRequest($request);
 
 
-            if($form->isSubmitted() && $form->isValid()){
-            $contactNotification->notify($contact);
-            $this->addFlash('success','Thanks, we\'ve received your email');
-            }
+        // if ($form->isSubmitted() && $form->isValid()){
+        // $contactNotification->notify($contact);
+        // $this->addFlash('success','Thanks, we\'ve received your email');
+        // }
   
 
         return $this->render('property/show.html.twig', [
             'property' => $property,
             'current_menu' => 'properties',
-            'form' => $form->createView()
+            //'form' => $form->createView()
         ]);
     }
     

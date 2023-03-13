@@ -10,3 +10,9 @@
 {
     color: white;
 }
+
+.no-property-founded
+{
+    color: red;
+    font-weight: bold;
+}
